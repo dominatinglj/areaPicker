@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "LJTreeNode.h"
+#import "AreaPicker.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    LJTreeNode *node = [[LJTreeNode alloc] initWithPlistFile:[[NSBundle mainBundle] pathForResource:@"ProvincesCitiesAreas" ofType:@"plist"]];
+    NSLog(@"%@",node);
+    
+    AreaPicker *picker = [[AreaPicker alloc] initWithFrame:CGRectMake(0, 100, 300, 300)];
+    picker.treeNode = node;
+    picker.titleAttribute = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
+    [self.view addSubview:picker];
 }
 
 - (void)didReceiveMemoryWarning {

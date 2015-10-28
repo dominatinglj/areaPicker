@@ -17,6 +17,7 @@
 		F6D752D11BE07FD100C09299 /* AreaPickerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D752D01BE07FD100C09299 /* AreaPickerUITests.m */; };
 		F6D752E21BE082DB00C09299 /* ProvincesCitiesAreas.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6D752E11BE082DB00C09299 /* ProvincesCitiesAreas.plist */; };
 		F6D752E51BE082F300C09299 /* AreaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D752E41BE082F300C09299 /* AreaPicker.m */; };
+		F6D753271BE0A29900C09299 /* LJTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D753261BE0A29900C09299 /* LJTreeNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		F6D752E11BE082DB00C09299 /* ProvincesCitiesAreas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProvincesCitiesAreas.plist; sourceTree = "<group>"; };
 		F6D752E31BE082F300C09299 /* AreaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaPicker.h; sourceTree = "<group>"; };
 		F6D752E41BE082F300C09299 /* AreaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaPicker.m; sourceTree = "<group>"; };
+		F6D753251BE0A29900C09299 /* LJTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJTreeNode.h; sourceTree = "<group>"; };
+		F6D753261BE0A29900C09299 /* LJTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJTreeNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 				F6D752E11BE082DB00C09299 /* ProvincesCitiesAreas.plist */,
 				F6D752E31BE082F300C09299 /* AreaPicker.h */,
 				F6D752E41BE082F300C09299 /* AreaPicker.m */,
+				F6D753251BE0A29900C09299 /* LJTreeNode.h */,
+				F6D753261BE0A29900C09299 /* LJTreeNode.m */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D752B31BE07FD100C09299 /* ViewController.m in Sources */,
+				F6D753271BE0A29900C09299 /* LJTreeNode.m in Sources */,
 				F6D752B01BE07FD100C09299 /* AppDelegate.m in Sources */,
 				F6D752E51BE082F300C09299 /* AreaPicker.m in Sources */,
 				F6D752AD1BE07FD100C09299 /* main.m in Sources */,
@@ -514,6 +520,7 @@
 				F6D752D71BE07FD100C09299 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6D752D81BE07FD100C09299 /* Build configuration list for PBXNativeTarget "AreaPickerTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +529,7 @@
 				F6D752DA1BE07FD100C09299 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6D752DB1BE07FD100C09299 /* Build configuration list for PBXNativeTarget "AreaPickerUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +538,7 @@
 				F6D752DD1BE07FD100C09299 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
