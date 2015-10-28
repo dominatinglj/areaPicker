@@ -38,6 +38,11 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    _pickerView.frame = self.bounds;
+}
+
 - (void)createView {
     LJTreeNode *node = [[LJTreeNode alloc] initWithPlistFile:[[NSBundle mainBundle] pathForResource:@"ProvincesCitiesAreas" ofType:@"plist"]];
     self.treeNode = node;
