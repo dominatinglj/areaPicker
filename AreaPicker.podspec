@@ -13,12 +13,13 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/NAME'
 
   s.platform     = :ios, '7.0'
+	s.resource     = 'AreaPicker/lib/ProvincesCitiesAreas.plist'
   # s.ios.deployment_target = '5.0'
   # s.osx.deployment_target = '10.7'
   s.requires_arc = true
 
-  s.source_files = 'AreaPicker/lib/*'
-  # s.resources = 'Assets'
+  s.source_files = 'AreaPicker/lib/*.{h,m}'
+  # s.resources = 'AreaPicker/lib/ProvincesCitiesAreas.plist'
 
   # s.ios.exclude_files = 'Classes/osx'
   # s.osx.exclude_files = 'Classes/ios'
