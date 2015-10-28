@@ -15,6 +15,8 @@
 		F6D752BB1BE07FD100C09299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6D752B91BE07FD100C09299 /* LaunchScreen.storyboard */; };
 		F6D752C61BE07FD100C09299 /* AreaPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D752C51BE07FD100C09299 /* AreaPickerTests.m */; };
 		F6D752D11BE07FD100C09299 /* AreaPickerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D752D01BE07FD100C09299 /* AreaPickerUITests.m */; };
+		F6D752E21BE082DB00C09299 /* ProvincesCitiesAreas.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6D752E11BE082DB00C09299 /* ProvincesCitiesAreas.plist */; };
+		F6D752E51BE082F300C09299 /* AreaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D752E41BE082F300C09299 /* AreaPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		F6D752CC1BE07FD100C09299 /* AreaPickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AreaPickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D752D01BE07FD100C09299 /* AreaPickerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaPickerUITests.m; sourceTree = "<group>"; };
 		F6D752D21BE07FD100C09299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6D752E11BE082DB00C09299 /* ProvincesCitiesAreas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProvincesCitiesAreas.plist; sourceTree = "<group>"; };
+		F6D752E31BE082F300C09299 /* AreaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaPicker.h; sourceTree = "<group>"; };
+		F6D752E41BE082F300C09299 /* AreaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +106,7 @@
 		F6D752AA1BE07FD100C09299 /* AreaPicker */ = {
 			isa = PBXGroup;
 			children = (
+				F6D752E01BE082DB00C09299 /* lib */,
 				F6D752AE1BE07FD100C09299 /* AppDelegate.h */,
 				F6D752AF1BE07FD100C09299 /* AppDelegate.m */,
 				F6D752B11BE07FD100C09299 /* ViewController.h */,
@@ -138,6 +144,16 @@
 				F6D752D21BE07FD100C09299 /* Info.plist */,
 			);
 			path = AreaPickerUITests;
+			sourceTree = "<group>";
+		};
+		F6D752E01BE082DB00C09299 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F6D752E11BE082DB00C09299 /* ProvincesCitiesAreas.plist */,
+				F6D752E31BE082F300C09299 /* AreaPicker.h */,
+				F6D752E41BE082F300C09299 /* AreaPicker.m */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D752E21BE082DB00C09299 /* ProvincesCitiesAreas.plist in Resources */,
 				F6D752BB1BE07FD100C09299 /* LaunchScreen.storyboard in Resources */,
 				F6D752B81BE07FD100C09299 /* Assets.xcassets in Resources */,
 				F6D752B61BE07FD100C09299 /* Main.storyboard in Resources */,
@@ -272,6 +289,7 @@
 			files = (
 				F6D752B31BE07FD100C09299 /* ViewController.m in Sources */,
 				F6D752B01BE07FD100C09299 /* AppDelegate.m in Sources */,
+				F6D752E51BE082F300C09299 /* AreaPicker.m in Sources */,
 				F6D752AD1BE07FD100C09299 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
