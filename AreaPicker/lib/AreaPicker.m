@@ -24,10 +24,7 @@
 {
     self = [super init];
     if (self) {
-        _pickerView = [[UIPickerView alloc] init];
-        _pickerView.delegate = self;
-        _pickerView.dataSource = self;
-        [self addSubview:_pickerView];
+        [self createView];
     }
     return self;
 }
@@ -36,12 +33,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _pickerView = [[UIPickerView alloc] initWithFrame:self.bounds];
-        _pickerView.delegate = self;
-        _pickerView.dataSource = self;
-        [self addSubview:_pickerView];
+        [self createView];
     }
     return self;
+}
+
+- (void)createView {
+    LJTreeNode *node = [[LJTreeNode alloc] initWithPlistFile:[[NSBundle mainBundle] pathForResource:@"ProvincesCitiesAreas" ofType:@"plist"]];
+    self.treeNode = node;
+    
+    _pickerView = [[UIPickerView alloc] initWithFrame:self.bounds];
+    _pickerView.delegate = self;
+    _pickerView.dataSource = self;
+    [self addSubview:_pickerView];
 }
 
 - (NSString *)selectedArea {
