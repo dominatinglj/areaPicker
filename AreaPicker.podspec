@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = "0.1"
   s.summary          = "中国省市县选择器"
   s.description      = <<-DESC
-                       中国省市县选择器
+                       中国省市县选择器啊
                        DESC
   s.homepage         = "https://github.com/dominatinglj/areaPicker"
   # s.screenshots      = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   # s.osx.deployment_target = '10.7'
   s.requires_arc = true
 
-  s.source_files = 'WZMarqueeView/lib/*'
+  s.source_files = 'AreaPicker/lib/*'
   # s.resources = 'Assets'
 
   # s.ios.exclude_files = 'Classes/osx'
