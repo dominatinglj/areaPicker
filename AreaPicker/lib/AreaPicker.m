@@ -69,7 +69,7 @@
 - (NSArray<NSString *> *)areaComponents {
     NSMutableArray<NSString *> *result = [@[] mutableCopy];
     LJTreeNode *node = _selectedNode;
-    while (node) {
+    while (node && node.value) {
         [result insertObject:node.value atIndex:0];
         node = node.parentNode;
     }
