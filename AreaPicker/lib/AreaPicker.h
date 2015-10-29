@@ -9,12 +9,23 @@
 #import <UIKit/UIKit.h>
 
 @class LJTreeNode;
+@class AreaPicker;
+
+@protocol AreaPickerDelegate <NSObject>
+
+@optional
+
+- (void)areaPicker:(AreaPicker *)areaPicker didSelectNode:(LJTreeNode *)node;
+
+@end
 
 @interface AreaPicker : UIView
 
 @property (nonatomic,strong) LJTreeNode *treeNode;
 @property (nonatomic,strong) NSDictionary *titleAttribute;
 @property (nonatomic,strong,readonly) LJTreeNode *selectedNode;
+
+@property (nonatomic,assign) id<AreaPickerDelegate> delegate;
 
 /**
  *  获取选中的区域

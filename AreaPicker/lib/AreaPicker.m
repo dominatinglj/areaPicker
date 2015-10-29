@@ -57,13 +57,7 @@
 }
 
 - (NSString *)area {
-    NSMutableString *result = [@"" mutableCopy];
-    LJTreeNode *node = _selectedNode;
-    while (node) {
-        [result insertString:node.value atIndex:0];
-        node = node.parentNode;
-    }
-    return result;
+    return [self.areaComponents componentsJoinedByString:@" "];
 }
 
 - (NSArray<NSString *> *)areaComponents {
@@ -119,6 +113,10 @@
     [_pickerView reloadAllComponents];
     for (NSInteger i = component+1; i < (NSInteger)_pickerView.numberOfComponents; i++) {
         [_pickerView selectRow:0 inComponent:i animated:YES];
+    }
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(areaPicker:didSelectNode:)]) {
+        [_delegate areaPicker:self didSelectNode:_selectedNode];
     }
 }
 
