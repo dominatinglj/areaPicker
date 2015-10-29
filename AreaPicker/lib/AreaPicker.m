@@ -99,6 +99,9 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSArray<LJTreeNode *> *ancestors = _selectedNode.ancestors;
+    if (ancestors.count <= component || ancestors[component].subNodes.count <= row) {
+        return;
+    }
     _selectedNode = ancestors[component].subNodes[row].firstLeaf;
     [_pickerView reloadAllComponents];
     for (NSInteger i = component+1; i < (NSInteger)_pickerView.numberOfComponents; i++) {
