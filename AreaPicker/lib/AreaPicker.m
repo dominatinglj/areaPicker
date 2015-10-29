@@ -44,13 +44,16 @@
 }
 
 - (void)createView {
-    LJTreeNode *node = [[LJTreeNode alloc] initWithPlistFile:[[NSBundle mainBundle] pathForResource:@"ProvincesCitiesAreas" ofType:@"plist"]];
-    self.treeNode = node;
-    
-    _pickerView = [[UIPickerView alloc] initWithFrame:self.bounds];
-    _pickerView.delegate = self;
-    _pickerView.dataSource = self;
-    [self addSubview:_pickerView];
+    if(!_pickerView) {
+        LJTreeNode *node = [[LJTreeNode alloc] initWithPlistFile:[[NSBundle mainBundle] pathForResource:@"ProvincesCitiesAreas" ofType:@"plist"]];
+        self.treeNode = node;
+        
+        _pickerView = [[UIPickerView alloc] initWithFrame:self.bounds];
+        _pickerView.delegate = self;
+        _pickerView.dataSource = self;
+        _pickerView.showsSelectionIndicator = YES;
+        [self addSubview:_pickerView];
+    }
 }
 
 - (NSString *)selectedArea {
