@@ -40,7 +40,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _pickerView.frame = self.bounds;
+    _pickerView.bounds = self.bounds;
+    _pickerView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
 }
 
 - (void)createView {
@@ -51,7 +52,7 @@
         _pickerView = [[UIPickerView alloc] initWithFrame:self.bounds];
         _pickerView.delegate = self;
         _pickerView.dataSource = self;
-        _pickerView.showsSelectionIndicator = YES;
+//        _pickerView.showsSelectionIndicator = YES;
         [self addSubview:_pickerView];
     }
 }
@@ -74,7 +75,8 @@
 
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
-    _pickerView.frame = self.bounds;
+    _pickerView.bounds = self.bounds;
+    _pickerView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
 }
 
 - (void)setTreeNode:(LJTreeNode *)treeNode {
