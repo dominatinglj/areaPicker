@@ -21,6 +21,13 @@
  *
  *  @return 选中的区域
  */
-- (NSString *)selectedArea;
+- (NSString *)area;
+
+/**
+ *  区域的各个部件(从省开始)
+ *
+ *  @return 区域的各个部件
+ */
+- (NSArray<NSString *> *)areaComponents;
 
 @end

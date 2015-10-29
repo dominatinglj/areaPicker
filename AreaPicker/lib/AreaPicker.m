@@ -56,11 +56,21 @@
     }
 }
 
-- (NSString *)selectedArea {
+- (NSString *)area {
     NSMutableString *result = [@"" mutableCopy];
     LJTreeNode *node = _selectedNode;
     while (node) {
         [result insertString:node.value atIndex:0];
+        node = node.parentNode;
+    }
+    return result;
+}
+
+- (NSArray<NSString *> *)areaComponents {
+    NSMutableArray<NSString *> *result = [@[] mutableCopy];
+    LJTreeNode *node = _selectedNode;
+    while (node) {
+        [result insertObject:node.value atIndex:0];
         node = node.parentNode;
     }
     return result;
