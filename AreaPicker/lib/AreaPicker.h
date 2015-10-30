@@ -23,7 +23,8 @@
 
 @property (nonatomic,strong) LJTreeNode *treeNode;
 @property (nonatomic,strong) NSDictionary *titleAttribute;
-@property (nonatomic,strong,readonly) LJTreeNode *selectedNode;
+@property (nonatomic,strong) LJTreeNode *selectedNode;  //选中的节点
+@property (nonatomic,strong) NSArray<NSString *> *areaComponents;   //区域的各个部件(从省开始)
 
 @property (nonatomic,assign) id<AreaPickerDelegate> delegate;
 
@@ -34,11 +35,11 @@
  */
 - (NSString *)area;
 
-/**
- *  区域的各个部件(从省开始)
- *
- *  @return 区域的各个部件
- */
-- (NSArray<NSString *> *)areaComponents;
+///**
+// *  区域的各个部件(从省开始)
+// *
+// *  @return 区域的各个部件
+// */
+//- (NSArray<NSString *> *)areaComponents;
 
 @end

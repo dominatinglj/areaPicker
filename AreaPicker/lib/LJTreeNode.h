@@ -16,6 +16,8 @@
 
 - (instancetype)initWithPlistFile:(NSString *)file;
 
+- (LJTreeNode *)findSubWithArray:(NSArray<NSString *> *)array;
+
 /**
  *  获取最大深度
  *

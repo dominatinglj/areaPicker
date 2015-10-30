@@ -18,8 +18,6 @@
 
 @implementation AreaPicker
 
-@synthesize selectedNode = _selectedNode;
-
 - (instancetype)init
 {
     self = [super init];
@@ -57,6 +55,8 @@
     }
 }
 
+#pragma mark - getter and setter
+
 - (NSString *)area {
     return [self.areaComponents componentsJoinedByString:@" "];
 }
@@ -71,6 +71,25 @@
     return result;
 }
 
+- (void)setAreaComponents:(NSArray<NSString *> *)areaComponents {
+    LJTreeNode *node = [_treeNode findSubWithArray:areaComponents];
+    self.selectedNode = node;
+}
+
+- (void)setSelectedNode:(LJTreeNode *)selectedNode {
+    _selectedNode = selectedNode;
+    [_pickerView reloadAllComponents];
+    NSArray<LJTreeNode *> *ancestors = _selectedNode.ancestors;
+    NSMutableArray<LJTreeNode *> *nodes = [ancestors mutableCopy];
+    [nodes addObject:_selectedNode];
+    for (NSInteger i = 0; i < (NSInteger)nodes.count-1; i++) {
+        LJTreeNode *parent = nodes[i];
+        LJTreeNode *sub = nodes[i+1];
+        NSUInteger index = [parent.subNodes indexOfObject:sub];
+        [_pickerView selectRow:index inComponent:i animated:YES];
+    }
+}
+
 #pragma mark - setter and getter
 
 - (void)setFrame:(CGRect)frame {
@@ -81,8 +100,7 @@
 
 - (void)setTreeNode:(LJTreeNode *)treeNode {
     _treeNode = treeNode;
-    _selectedNode = _treeNode.firstLeaf;
-    [_pickerView reloadAllComponents];
+    self.selectedNode = _treeNode.firstLeaf;
 }
 
 - (void)setTitleAttribute:(NSDictionary *)titleAttribute {
@@ -111,11 +129,7 @@
     if (ancestors.count <= component || ancestors[component].subNodes.count <= row) {
         return;
     }
-    _selectedNode = ancestors[component].subNodes[row].firstLeaf;
-    [_pickerView reloadAllComponents];
-    for (NSInteger i = component+1; i < (NSInteger)_pickerView.numberOfComponents; i++) {
-        [_pickerView selectRow:0 inComponent:i animated:YES];
-    }
+    self.selectedNode = ancestors[component].subNodes[row].firstLeaf;
     
     if (_delegate && [_delegate respondsToSelector:@selector(areaPicker:didSelectNode:)]) {
         [_delegate areaPicker:self didSelectNode:_selectedNode];

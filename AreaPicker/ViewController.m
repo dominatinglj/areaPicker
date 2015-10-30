@@ -28,8 +28,8 @@
     _picker = [[AreaPicker alloc] init];
     _picker.frame = CGRectMake(0, 100, self.view.frame.size.width, 300);
     _picker.backgroundColor = [UIColor greenColor];
-//    picker.treeNode = node;
     _picker.titleAttribute = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
+    _picker.areaComponents = @[@"北京",@"怀柔"];
     _picker.delegate = self;
     [self.view addSubview:_picker];
     
@@ -42,6 +42,8 @@
 - (void)areaPicker:(AreaPicker *)areaPicker didSelectNode:(LJTreeNode *)node {
     _label.text = areaPicker.area;
     _picker.frame = CGRectMake(0, 100, self.view.frame.size.width, 216);
+//    _picker.selectedNode = _picker.treeNode.firstLeaf;
+    
 }
 
 - (void)didReceiveMemoryWarning {

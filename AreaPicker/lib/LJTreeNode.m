@@ -41,6 +41,25 @@
     return self;
 }
 
+- (LJTreeNode *)findSubWithArray:(NSArray<NSString *> *)array {
+    LJTreeNode *current = self;
+    for (NSInteger i = 0; i < (NSInteger)array.count; i++) {
+        NSUInteger index =
+        [current.subNodes indexOfObjectPassingTest:^BOOL(LJTreeNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([array[i] isEqualToString:obj.value]) {
+                *stop = YES;
+                return YES;
+            }
+            return NO;
+        }];
+        if (index == NSNotFound) {
+            return nil;
+        }
+        current = current.subNodes[index];
+    }
+    return current;
+}
+
 - (NSUInteger)depth {
     if (!_subNodes.count) {
         return 1;
