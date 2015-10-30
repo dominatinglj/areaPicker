@@ -29,7 +29,7 @@
     _picker.frame = CGRectMake(0, 100, self.view.frame.size.width, 300);
     _picker.backgroundColor = [UIColor greenColor];
     _picker.titleAttribute = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
-    _picker.areaComponents = @[@"北京",@"怀柔"];
+    _picker.areaComponents = @[@"江西",@"宜春"];
     _picker.delegate = self;
     [self.view addSubview:_picker];
     

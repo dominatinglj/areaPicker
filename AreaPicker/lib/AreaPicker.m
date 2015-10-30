@@ -73,6 +73,11 @@
 
 - (void)setAreaComponents:(NSArray<NSString *> *)areaComponents {
     LJTreeNode *node = [_treeNode findSubWithArray:areaComponents];
+    if (!node) {
+        node = _treeNode.firstLeaf;
+    } else {
+        node = node.firstLeaf;
+    }
     self.selectedNode = node;
 }
 
